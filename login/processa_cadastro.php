@@ -7,8 +7,8 @@ if (!empty($_POST)) {
   try {
   
       $sql = "INSERT INTO usuario (
-          matricula_usuario, nome_usuario, sobre_nome_usuario, cpf, genero, login, senha) 
-            VALUES (:matricula_usuario, :nome_usuario, :sobre_nome_usuario, :cpf, :genero, :login, :senha)";
+          matricula_usuario, nome_usuario, cpf, sexo, telefone, endereco, uf, cidade, data_nascimento, email, senha) 
+            VALUES (:matricula_usuario, :nome_usuario, :cpf, :sexo, :telefone, :endereco, :uf, :cidade, :data_nascimento, :email, :senha)";
 
       $stmt = $conexao->prepare($sql);
 
@@ -16,10 +16,14 @@ if (!empty($_POST)) {
       $dados = array(
         ':matricula_usuario' => $_POST['matricula'],
         ':nome_usuario' => $_POST['nome'],
-        ':sobre_nome_usuario' => $_POST['sobrenome'],
         ':cpf' => $_POST['cpf'],
-        ':genero' => $_POST['genero'],
-        ':login' => $_POST['email'],
+        ':sexo' => $_POST['sexo'],
+        ':telefone' => $_POST['telefone'],
+        ':endereco' => $_POST['endereco'],
+        ':uf' => $_POST['uf'],
+        ':cidade' => $_POST['cidade'],
+        ':data_nascimento' => $_POST['nascimento'],
+        ':email' => $_POST['email'],
         ':senha' => $_POST['senha']
       );
 
@@ -31,6 +35,6 @@ if (!empty($_POST)) {
       header("Location: cadastro.html?msgErro=Falha ao cadastrar...");
      }
 }else {
-  header("Location: index.html?msgErro=Erro de acesso.");
+  header("Location: login.html?msgErro=Erro de acesso.");
 }
 die();
