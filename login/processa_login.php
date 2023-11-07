@@ -10,12 +10,12 @@ if (!empty($_POST)) {
   // Obter as informações do formulário ($_POST)
   try {
     
-      $sql = "SELECT login, senha FROM  usuario where login = :login AND senha = :senha;";
+      $sql = "SELECT email, senha FROM  usuario where email = :email AND senha = :senha;";
 
       $stmt = $conexao->prepare($sql);
 
       $dados = array(
-        ':login' => $_POST['login'],
+        ':email' => $_POST['email'],
         ':senha' => $_POST['senha']
       );
 
@@ -27,21 +27,21 @@ if (!empty($_POST)) {
 
         $result = $result[0];
 
-        $_SESSION['login'] = $result['login'];
+        $_SESSION['email'] = $result['email'];
         $_SESSION['senha'] = $result['senha'];
 
         header('Location: sucesso.html?msgSucesso = Deu certo');
 
       }else{
         session_destroy();
-        header('Location: index.html?msgErro = Deu errado');
+        header('Location: login.html?msgErro = Deu errado');
       }
 
     }catch (PDOException $e) {
       die($e->getMessage());
   }
 }else{
-    header('Location: index.html?msgErro = Sem permisão');
+    header('Location: login.html?msgErro = Sem permisão');
 }
 die();
 

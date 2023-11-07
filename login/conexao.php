@@ -1,8 +1,8 @@
 <?php
 $endereco = 'localhost';
-$banco = 'usuario';
+$banco = 'seminario';
 $usuario = 'postgres';
-$senha = 'postgres';
+$senha = 'root';
 
 try {
   $conexao = new PDO("pgsql:host=$endereco;port=5432;dbname=$banco", $usuario, $senha, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);

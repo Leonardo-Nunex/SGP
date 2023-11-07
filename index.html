@@ -1,41 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="menu.css" class="css">
+    <title>NOME DA SUA AREA</title>
 </head>
 <body>
-    <div class="usericon"><img src="assets/User.png" width="50px"></div>
-   
-    <div class="senhaicon"><img src="assets/Password.png" width="50px"></div>
-   
-    <div class="logo"><img src="assets/logo.png" ></div>
-    
-    <div class="wrapper">
-        <form action="processa_login.php" method="post">
-
-            <h1>Login</h1>
-            <div class="input-box">
-                <input type="email" placeholder="Matricula" required name="login">
-                <i class='bx bx-user'></i>
+    <div class="navbar">
+        <ul>
+            <a href="#"><img style="width: 250px;" src="src/logo.png" alt=""></a>
+            <div class="links">
+                
+                <a href="#"><li>Sobre</li></a>
+                <a href="#"><li>Blog</li></a>
+                <a href="contatos/contatos.html"><li>Contato</li></a>
+                <div class="entrar"><a href="login/login.html">
+                        <div class="entraricon">
+                            <img style="height: 40px;" src="src/🦆 icon _profile circled_.svg" alt="">
+                            <li>Entrar</li>
+                        </div></a>
+                </div>
             </div>
 
-            <div class="input-box">
-                <input type="password"
-                placeholder="Senha" required name="senha">
-                <i class='bx bx-lock-open-alt' ></i>
-            </div>
-            
-            <div class="remember-forgot">
-                <label><input type="checkbox">Lembrar senha</label>
-                <a href="cadastro.html">Cadastrar</a>
-            </div>
-
-            <button type="submit" class="btn" > ACESSAR </button>
-    </form>
-   </div>
+        </ul>
+    </div>
+ 
 </body>
 </html>
